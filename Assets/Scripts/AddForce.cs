@@ -13,12 +13,13 @@ public class AddForce : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		print (transform.forward * force);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.anyKeyDown) {
-			body.AddForce(new Vector3(0,0,force));
+			body.AddForce(transform.forward * force);
 		}
 	}
 }

@@ -14,10 +14,10 @@ public class Launcher : MonoBehaviour {
 	
 	}
 
-	void OnCollisionStay (Collision col){
-		print ("collided with object");
+	void OnTriggerStay (Collider col){
+		//print ("collided with object");
 		if (Input.anyKeyDown) {
-			col.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0,0,force));
+			col.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * force);
 		}
 	}
 }
